@@ -80,5 +80,5 @@ func upload(c echo.Context) (err error) {
 	}
 	file.Close()
 
-	return c.Redirect(http.StatusCreated, "/")
+	return c.Redirect(http.StatusSeeOther, "/")
 }

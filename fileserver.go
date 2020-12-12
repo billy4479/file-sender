@@ -28,7 +28,11 @@ func downloadRoot(c echo.Context) (err error) {
 		files = append(files, info)
 		return nil
 	})
-	c.Render(http.StatusOK, "fileserver", files)
+	if err != nil {
+		return
+	}
+	err = c.Render(http.StatusOK, "fileserver", files)
+
 	return
 }
 
